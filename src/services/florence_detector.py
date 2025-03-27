@@ -5,7 +5,7 @@ from PIL import Image
 from transformers import AutoProcessor, AutoModelForCausalLM
 
 class FlorenceDetector:
-    def __init__(self, model_path=r"E:\Project\test\Florence2-large\model", device='cuda' if torch.cuda.is_available() else 'cpu'):
+    def __init__(self, model_path, device='cuda' if torch.cuda.is_available() else 'cpu'):
         self.device = device
         self.dtype = torch.float16 if device == 'cuda' else torch.float32
         self.model = AutoModelForCausalLM.from_pretrained(
@@ -46,7 +46,7 @@ class FlorenceDetector:
             return bboxes
         except Exception as e:
             return []
-    
+
     def refine_rectangle(self, image: Image.Image, bbox):
         if isinstance(bbox, list) and len(bbox) > 0 and isinstance(bbox[0], (list, tuple)):
             bbox = bbox[0]

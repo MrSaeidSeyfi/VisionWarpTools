@@ -4,7 +4,7 @@ from PIL import Image
 from src.services.florence_detector import FlorenceDetector
 
 class ImageProcessor:
-    def auto_process(self, image):
+    def auto_process(self, image, model_path, category):
         if image is None:
             return None, "Error: No image provided.", None
         if isinstance(image, str):
@@ -15,9 +15,8 @@ class ImageProcessor:
         elif not isinstance(image, Image.Image):
             return None, "Error: Image must be a PIL Image", None
 
-
-        detector = FlorenceDetector()
-        bboxes = detector.detect_bounding_box(image)
+        detector = FlorenceDetector(model_path=model_path)
+        bboxes = detector.detect_bounding_box(image, category=category)
         if not bboxes or len(bboxes) == 0:
             return None, "Error: Could not detect bounding box.", None
 

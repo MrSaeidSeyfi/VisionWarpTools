@@ -38,6 +38,12 @@ The tool:
 6. Click "Auto-detect Corners" to process the image
 
 
+## Result
+![photo18039697937](https://github.com/user-attachments/assets/4270381f-a225-467a-8a83-676dd6f1ee23)
+![photo18039698202](https://github.com/user-attachments/assets/1f214916-8fbb-4d98-a3fd-5d9108d180a7)
+![photo18039698048](https://github.com/user-attachments/assets/24136f0a-d230-41cc-8251-4b34a0ffa5c7)
+
+
 ## License
 
 MIT
